@@ -1,0 +1,19 @@
+name: hello-world
+version: 0.1
+vendor: Shawn wang <shawn.wang@canonical.com>
+summary: Hello World
+description: https://www.gnu.org/software/automake/manual/html_node/Creating-amhello.html#Creating-amhello
+icon: icon.png
+
+parts:
+  hello:
+    type: autotools-project
+    plugin: autotools
+    source: .
+    source-type: tar
+    configflags:
+        - --enable-static
+        - --enable-shared
+        - --disable-manual
+    snap:
+        - -bin
